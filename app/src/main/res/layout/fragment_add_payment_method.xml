@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent" android:layout_height="match_parent"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical">
+
+    <LinearLayout
+            android:id="@+id/content_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_10dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@android:color/holo_green_dark"
+                    app:srcCompat="@drawable/ic_lock_black_24dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_6dp"
+                    android:text="@string/add_card_title_1"
+                    android:textSize="@dimen/ts_12_sp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_card_title_2"
+                    android:textSize="@dimen/ts_12_sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16dp"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textAllCaps="true"
+                    android:textColor="#808080"
+                    android:textSize="@dimen/ts_13_sp"/>
+
+            <EditText
+                    android:id="@+id/editCardName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:paddingBottom="@dimen/padding_8dp"
+                    android:paddingTop="@dimen/padding_8dp"
+                    android:textCursorDrawable="@null"
+                    android:textColor="#000"
+                    android:textSize="@dimen/ts_14_sp"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#2000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_number"
+                    android:textAllCaps="true"
+                    android:textColor="#808080"
+                    android:textSize="@dimen/ts_13_sp"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:id="@+id/iv_card_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/padding_8dp"
+                        android:layout_marginStart="@dimen/padding_8dp"
+                        app:srcCompat="@drawable/ic_unknown"/>
+
+                <com.stripe.android.view.CardNumberEditText
+                        android:id="@+id/editCardNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="19"
+                        android:paddingBottom="@dimen/padding_8dp"
+                        android:paddingTop="@dimen/padding_8dp"
+                        android:textColor="#000"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/ts_14_sp"/>
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#2000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="@dimen/padding_10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exp"
+                        android:textColor="#808080"
+                        android:textSize="@dimen/ts_13_sp"/>
+
+                <com.stripe.android.view.ExpiryDateEditText
+                        android:id="@+id/editExpiryDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="MM/YY"
+                        android:imeOptions="actionNext"
+                        android:inputType="date"
+                        android:maxLength="5"
+                        android:paddingBottom="@dimen/padding_8dp"
+                        android:paddingTop="@dimen/padding_8dp"
+                        android:textCursorDrawable="@null"
+                        android:textColor="#000"
+                        android:textSize="@dimen/ts_14_sp"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#2000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/padding_10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cvv_cvc"
+                        android:textColor="#808080"
+                        android:textSize="@dimen/ts_13_sp"/>
+
+                <com.stripe.android.view.StripeEditText
+                        android:id="@+id/editCVC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:paddingBottom="@dimen/padding_8dp"
+                        android:paddingTop="@dimen/padding_8dp"
+                        android:textCursorDrawable="@null"
+                        android:textColor="#000"
+                        android:textSize="@dimen/ts_14_sp"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#2000"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:paddingBottom="@dimen/padding_8dp"
+                    android:paddingTop="@dimen/padding_8dp"
+                    android:text="Make primary card"
+                    android:textColor="#000"
+                    android:textSize="@dimen/ts_14_sp"/>
+
+            <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_primary_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/llScanYourCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding_16dp"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:tint="@android:color/holo_red_light"
+                app:srcCompat="@drawable/ic_camera_alt_black_24dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_your_card"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="14sp"/>
+    </LinearLayout>
+
+</LinearLayout>

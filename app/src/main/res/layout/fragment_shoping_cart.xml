@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvShopping"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_beer"
+            tools:orientation="vertical"
+            android:layout_above="@id/bottom_bar"/>
+
+    <LinearLayout
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shadow_top"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_10dp"
+            android:paddingLeft="@dimen/padding_10dp"
+            android:paddingRight="@dimen/padding_10dp"
+            android:paddingTop="@dimen/padding_16dp">
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tvCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="12sp"
+                    tools:text="1 selected"/>
+
+            <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    tools:text="USD $383"/>
+
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/btnPayNow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="5"
+                android:background="@drawable/btn_corner_5dp_blue"
+                android:paddingLeft="@dimen/padding_40dp"
+                android:paddingRight="@dimen/padding_40dp"
+                android:text="@string/pay_now"
+                android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+</RelativeLayout>

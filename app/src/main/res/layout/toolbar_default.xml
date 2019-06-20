@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:id="@+id/toolbar"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="@dimen/dimen_toolbar"
+                                   android:contentInsetLeft="0dp"
+                                   android:contentInsetStart="0dp"
+                                   android:contentInsetStartWithNavigation="0dp"
+                                   android:elevation="@dimen/dimen_toolbar_elevation"
+                                   android:theme="@style/AppTheme.AppBarOverlay"
+                                   app:contentInsetLeft="0dp"
+                                   app:contentInsetStart="0dp"
+                                   app:contentInsetStartWithNavigation="1dp"
+                                   app:elevation="@dimen/dimen_toolbar_elevation"
+                                   app:popupTheme="@style/AppTheme.PopupOverlay">
+    <!--app:layout_scrollFlags="scroll|enterAlways|snap"-->
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/tvTitleToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                tools:text="@string/app_name"/>
+
+        <TextView
+                android:id="@+id/tvAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_8dp"
+                android:background="?attr/selectableItemBackground"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="@dimen/padding_10dp"
+                android:paddingRight="@dimen/padding_10dp"
+                android:layout_centerVertical="true"
+                tools:text="@string/action_add"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/ts_16_sp"
+                android:gravity="center"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

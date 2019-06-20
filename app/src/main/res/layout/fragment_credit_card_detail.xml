@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+            android:layout_above="@+id/llChooseThisCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/lnl_root_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/tv_cartTitleEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_10dp"
+                        android:gravity="center"
+                        android:textSize="@dimen/ts_13_sp"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/inform_please_ensure_your_email_is_correct"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/ts_13_sp"/>
+
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_20dp"
+                        android:gravity="center"
+                        android:text="You have chosen to pay with"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/ts_13_sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_16dp"
+                    android:layout_marginRight="@dimen/padding_16dp"
+                    android:layout_marginTop="@dimen/padding_10dp"
+                    android:background="@drawable/btn_corner_card"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_24dp">
+
+                <ImageView
+                        android:id="@+id/imgCardType"
+                        android:layout_width="@dimen/padding_30dp"
+                        android:layout_height="@dimen/padding_30dp"
+                        android:src="@drawable/ic_visa"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_14_sp"/>
+
+                    <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_6dp"
+                            android:text=""
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_15_sp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_10dp"
+                        android:orientation="horizontal">
+
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Card number"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/ts_14_sp"/>
+
+                        <TextView
+                                android:id="@+id/tvCardNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_6dp"
+                                tools:text="•••• •••• •••• 4242"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/ts_15_sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/padding_6dp"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="EXP"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/ts_14_sp"/>
+
+                        <TextView
+                                android:id="@+id/txtCardExpired"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_6dp"
+                                android:text="10/18"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/ts_15_sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_20dp"
+                    android:gravity="center"
+                    android:text="You are about to make a payment\nfor these product"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/ts_13_sp"/>
+
+
+
+                <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_20dp"
+                        android:layout_marginRight="@dimen/padding_20dp"
+                        android:layout_below="@+id/recycle_cart">
+
+                    <TextView
+                            android:id="@+id/sub_total_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_20dp"
+                            android:text="Sub-total"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_14_sp"
+                            android:visibility="gone"/>
+
+                    <TextView
+                            android:id="@+id/discount_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/sub_total_tv"
+                            android:layout_marginTop="@dimen/padding_16dp"
+                            android:text="Discount"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_14_sp"
+                            android:visibility="gone"/>
+
+                    <TextView
+                            android:id="@+id/grand_total_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/discount_tv"
+                            android:layout_marginTop="@dimen/padding_16dp"
+                            android:text="Grand total"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_14_sp"
+                            android:visibility="gone"/>
+
+                    <TextView
+                            android:id="@+id/sub_total_price_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/sub_total_tv"
+                            android:text="SGD $590"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_18_sp"
+                            android:visibility="gone"/>
+
+                    <TextView
+                            android:id="@+id/discount_price_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/discount_tv"
+                            android:text="SGD $590"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_18_sp"
+                            android:visibility="gone"/>
+
+                    <TextView
+                            android:id="@+id/grand_total_price_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/grand_total_tv"
+                            android:text="SGD $590"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="@dimen/ts_18_sp"
+                            android:visibility="gone"/>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycle_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_20dp"
+                        android:layout_marginRight="@dimen/padding_20dp"
+                        android:layout_marginTop="@dimen/padding_20dp"
+                        tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_cart_item"
+                        tools:orientation="vertical"
+                        android:focusable="false"/>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+            android:id="@+id/llChooseThisCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/this_payment_method_will_only_be_changed_n_when_you_request_booking"
+                android:visibility="gone"/>
+
+        <Button
+                android:id="@+id/btnChooseThisCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_10dp"
+                android:layout_marginLeft="@dimen/padding_10dp"
+                android:layout_marginRight="@dimen/padding_10dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:background="@drawable/btn_corner_5dp_blue"
+                android:text="@string/choose_this_card"
+                android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+</RelativeLayout>

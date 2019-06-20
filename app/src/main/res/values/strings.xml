@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">DemoPaypal</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="shopping">Shopping</string>
+    <string name="null_value">&#8226;&#8226;&#8226;&#8226;</string>
+    <string name="delete_this_card">Delete this card</string>
+    <string name="choose_this_card">Confirm &amp; Pay</string>
+    <string name="no_payment_method">No payment methods!</string>
+    <string name="add_now">Add now</string>
+    <string name="action_add">Add</string>
+    <string name="action_save">Save</string>
+    <string name="your_payment_method">Your Payment Method</string>
+    <string name="inform_please_ensure_your_email_is_correct">Please ensure your email is correct.</string>
+    <string name="this_payment_method_will_only_be_changed_n_when_you_request_booking">This payment method will only be changed \n when you request</string>
+
+    <string name="add_card_title">Add Card</string>
+    <string name="add_card_title_1">Your payment details are securely encrypted with Stripe.</string>
+    <string name="add_card_title_2">App does not have access to your payment details.</string>
+    <string name="card_number">Card Number</string>
+    <string name="cvv_cvc">CVV/CVC</string>
+    <string name="scan_your_card">Scan your card</string>
+
+    <string name="name">Name</string>
+    <string name="exp">EXP</string>
+</resources>
