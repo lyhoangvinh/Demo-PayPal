@@ -28,7 +28,6 @@ class AddPaymentPresenter @Inject constructor(@ActivityContext ctx: Context, pri
                 override fun onSuccess(token: Token?) {
                     it.onSuccess(token!!)
                 }
-
                 override fun onError(error: java.lang.Exception?) {
                     it.onError(error!!)
                 }
