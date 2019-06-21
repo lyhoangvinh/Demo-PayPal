@@ -23,10 +23,8 @@ class AddPaymentPresenter @Inject constructor(@ActivityContext ctx: Context, pri
 
     fun insertCard(name: String, card: Card) {
         getView()?.showProgress()
-        val stripe = Stripe(context, Constants.KEY)
-
-        val single = Single.create(SingleOnSubscribe<Token> {
-            stripe.createToken(card, object : TokenCallback {
+        disposeOnDestroy(Single.create(SingleOnSubscribe<Token> {
+            Stripe(context, Constants.KEY).createToken(card, object : TokenCallback {
                 override fun onSuccess(token: Token?) {
                     it.onSuccess(token!!)
                 }
@@ -57,8 +55,6 @@ class AddPaymentPresenter @Inject constructor(@ActivityContext ctx: Context, pri
                     getView()?.hideProgress()
 
                 }
-            })
-
-        disposeOnDestroy(single)
+            }))
     }
 }
