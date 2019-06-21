@@ -13,4 +13,8 @@ class CardRepo @Inject constructor(private val cardDao: CardDao) : BaseRepo() {
             cardDao.insert(cart)
         }
     }
+
+    fun delete(cart: Card) {
+        execute { cardDao.delete(cart) }
+    }
 }

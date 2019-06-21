@@ -3,11 +3,14 @@ package com.vinh.demopaypal.ui.features.main.paymentmethod
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.helper.ItemTouchHelper
 import android.view.View
 import com.vinh.demopaypal.R
 import com.vinh.demopaypal.data.entinies.Card
 import com.vinh.demopaypal.ui.base.activity.BaseSingleFragmentActivity
 import com.vinh.demopaypal.ui.base.fragment.BasePresenterFragment
+import com.vinh.demopaypal.ui.base.interfaces.PlainConsumer
+import com.vinh.demopaypal.ui.widget.SwipeToDeleteCallback
 import com.vinh.demopaypal.utils.NavigatorHelper
 import com.vinh.demopaypal.utils.setVisible
 import kotlinx.android.synthetic.main.fragment_payment_method.*
@@ -39,7 +42,11 @@ class PaymentMethodFragment : BasePresenterFragment<PaymentMethodView, PaymentMe
         }
         rcvPayment.layoutManager = LinearLayoutManager(ctx, LinearLayoutManager.VERTICAL, false)
         rcvPayment.adapter = adapter
-
+        ItemTouchHelper(SwipeToDeleteCallback(ctx, object : PlainConsumer<Int> {
+            override fun accept(t: Int) {
+                presenter.delete(adapter?.getItem(t) as Card)
+            }
+        })).attachToRecyclerView(rcvPayment)
         noCardView.setOnClickListener { navigatorHelper.navigateAddPaymentFragment() }
     }
 
