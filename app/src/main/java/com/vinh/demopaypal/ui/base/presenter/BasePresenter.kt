@@ -28,6 +28,10 @@ abstract class BasePresenter<V : BaseView> internal constructor(
         return view as LifecycleOwner
     }
 
+    fun disposeOnDestroy(disposable: Disposable) {
+        mCompositeDisposable?.add(disposable)
+    }
+
     fun getView(): V? = view
 
     fun bindView(view: V) {

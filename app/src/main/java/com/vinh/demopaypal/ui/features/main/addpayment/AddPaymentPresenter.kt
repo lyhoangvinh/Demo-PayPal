@@ -10,6 +10,11 @@ import com.vinh.demopaypal.data.repo.CardRepo
 import com.vinh.demopaypal.di.qualifier.ActivityContext
 import com.vinh.demopaypal.di.scopes.PerFragment
 import com.vinh.demopaypal.ui.base.presenter.BasePresenter
+import io.reactivex.Single
+import io.reactivex.SingleEmitter
+import io.reactivex.SingleOnSubscribe
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @PerFragment
@@ -19,28 +24,41 @@ class AddPaymentPresenter @Inject constructor(@ActivityContext ctx: Context, pri
     fun insertCard(name: String, card: Card) {
         getView()?.showProgress()
         val stripe = Stripe(context, Constants.KEY)
-        stripe.createToken(card, object : TokenCallback {
-            override fun onError(error: Exception) {
-                getView()?.hideProgress()
-            }
 
-            override fun onSuccess(token: Token) {
+        val single = Single.create(SingleOnSubscribe<Token> {
+            stripe.createToken(card, object : TokenCallback {
+                override fun onSuccess(token: Token?) {
+                    it.onSuccess(token!!)
+                }
+
+                override fun onError(error: java.lang.Exception?) {
+                    it.onError(error!!)
+                }
+            })
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
                 //Todo:  addCardToServer(token)
                 getView()?.hideProgress()
                 cardRepo.insert(
                     com.vinh.demopaypal.data.entinies.Card(
-                        token = token.id,
-                        brand = token.card.brand,
-                        country = token.card.country,
-                        cvcCheck = token.card.cvcCheck,
-                        expMonth = token.card.expMonth,
-                        expYear = token.card.expYear,
+                        token = it.id,
+                        brand = it.card.brand,
+                        country = it.card.country,
+                        cvcCheck = it.card.cvcCheck,
+                        expMonth = it.card.expMonth,
+                        expYear = it.card.expYear,
                         name = name,
-                        last4 = token.card.last4
+                        last4 = it.card.last4
                     )
                 )
                 getView()?.addPaymentSuccess()
-            }
-        })
+            }, {
+                error {
+                    getView()?.hideProgress()
+
+                }
+            })
+
+        disposeOnDestroy(single)
     }
 }
